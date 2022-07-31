@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PWA LINKS -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Password Generator that shows its strength & options for key characters."
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Password Generator" />
+    <meta name="apple-mobile-web-app-title" content="Password Generator" />
+    <meta name="msapplication-starturl" content="/home.html" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="icon.svg" />
+    <link rel="apple-touch-icon" href="icon192.png" />
+    <link rel="apple-touch-icon" href="icon512.png" />
+    <!-- generated during deployment -->
+    <link rel="stylesheet" href="exer10.css" />
+    <!-- <link rel="stylesheet" href="/up/css/exer10.css" /> -->
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="frame">
+      <h2 class="title">Password Generator</h2>
+      <h4 class="sub-title">Never use an insecure password again</h4>
+      <p class="chars-include">Toggle on to include. . .</p>
+      <div class="wrapper">
+        <div class="key-option">
+          <input type="checkbox" id="uppercase" checked />
+          <label class="option" for="uppercase">Uppercase Letters</label>
+        </div>
+
+        <div class="key-option">
+          <input type="checkbox" id="lowercase" />
+          <label class="option" for="lowercase">Lowercase Letters</label>
+        </div>
+
+        <div class="key-option">
+          <input type="checkbox" id="symbols" />
+          <label class="option" for="symbols">Symbols</label>
+        </div>
+
+        <div class="key-option">
+          <input type="checkbox" id="numbers" />
+          <label class="option" for="numbers">Numbers</label>
+        </div>
+
+        <div class="key-option-length">
+          <label for="length">Password Length:</label>
+          <input
+            class="input-length"
+            type="number"
+            id="length"
+            min="4"
+            max="10"
+            value="8"
+          />
+        </div>
+
+        <div class="result-container">
+          <div id="result"></div>
+          <button class="copy-btn" id="clipboard">📋</button>
+          <p class="copied">copied</p>
+        </div>
+
+        <div class="pass-checker-container">
+          <p class="checker-title">Strength Checker:</p>
+          <span class="strength-badge"></span>
+        </div>
+
+        <button id="generate" class="genkey-btn">Generate Password</button>
+      </div>
+    </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((serviceWorker) => {
+            console.log("Service Worker registered: ", serviceWorker);
+          })
+          .catch((error) => {
+            console.error("Error registering the Service Worker: ", error);
+          });
+      }
+    </script>
+
+    <script src="index.js"></script>
+  </body>
+</html>

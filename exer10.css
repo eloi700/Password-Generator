@@ -1,0 +1,355 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: rgb(73, 73, 73);
+}
+
+.frame {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 35rem;
+  width: 30rem;
+  background: #027878;
+  overflow: hidden;
+  color: #fff;
+}
+
+.title {
+  position: absolute;
+  top: 1.8rem;
+  font-size: 2.2rem;
+  z-index: 1;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  background: #fdb632;
+  width: calc(100% + 4px);
+  height: 25%;
+  left: -2px;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+}
+
+.sub-title {
+  position: absolute;
+  top: 5rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  top: 3rem;
+  height: 28rem;
+  width: 28rem;
+}
+
+.chars-include {
+  position: absolute;
+  top: 7.8rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.key-option,
+.key-option-length {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.4rem;
+  margin: .5rem 1.5rem;
+  top: -1.5rem;
+}
+
+.key-option-length {
+  left: 2rem;
+  top: -1.5rem;
+}
+
+.input-length {
+  height: 2rem;
+  width: 6rem;
+  border-radius: 0.3rem;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  margin-left: 1rem;
+  color: #027878;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.option {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.3rem;
+  left: 8rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.option::before {
+  position: absolute;
+  content: "";
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  border: 0.1rem solid #fdb632;
+  background-color: #027878;
+  -webkit-transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;
+  left: -6rem;
+}
+
+.option::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: margin 0.1s linear;
+  transition: margin 0.1s linear;
+  -webkit-box-shadow: 0px 0px 5px #aaa;
+          box-shadow: 0px 0px 5px #aaa;
+  position: absolute;
+  left: -6rem;
+  top: 0.2rem;
+}
+
+input[type="checkbox"]:checked + .option {
+  -webkit-text-decoration: underline 0.1rem #fdb632;
+          text-decoration: underline 0.1rem #fdb632;
+  text-underline-offset: 0.1rem;
+}
+
+input[type="checkbox"]:checked + .option::before {
+  background: #fdb632;
+}
+
+input[type="checkbox"]:checked + .option::after {
+  left: -4rem;
+}
+
+.result-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  left: 1.4rem;
+  bottom: 1.3rem;
+  background: #fdb632;
+}
+
+#result {
+  overflow: hidden;
+  max-width: calc(100% - 3rem);
+}
+
+.copy-btn {
+  position: absolute;
+  left: 21.5rem;
+  font-size: 1.8rem;
+  background: none;
+  border-radius: 50%;
+  padding: .2rem .5rem .5rem .5rem;
+  border: .1rem solid #fff;
+  color: #777;
+  cursor: pointer;
+}
+
+.copy-btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.copy-btn:active + .copied {
+  visibility: visible;
+}
+
+.genkey-btn {
+  position: absolute;
+  padding: 0.5rem 2rem;
+  bottom: 0.8rem;
+  background: none;
+  font-family: inherit;
+  color: #fff;
+  left: 7rem;
+  border: 0.1rem solid #fdb632;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.8);
+  -webkit-transition: 0.2s active ease-in-out;
+  transition: 0.2s active ease-in-out;
+}
+
+.genkey-btn:hover {
+  background: #fdb632;
+  color: #027878;
+  font-weight: 500;
+}
+
+.genkey-btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0 0 0.5rem #fff;
+          box-shadow: 0 0 0.5rem #fff;
+}
+
+.copied {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #027878;
+  top: -2.5rem;
+  right: 0;
+  background: #fdb632;
+  padding: .3rem;
+  visibility: hidden;
+}
+
+.pass-checker-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  left: 1.4rem;
+  height: 2rem;
+  width: 90%;
+  top: -.5rem;
+}
+
+.checker-title, .strength-badge {
+  font-size: 1.4rem;
+}
+
+.strength-badge {
+  width: 12rem;
+  height: 2rem;
+  text-align: center;
+  margin-left: 1.8rem;
+  top: .1rem;
+  padding: 0;
+  border-top: .1rem solid #fff;
+  border-radius: 0 0 1rem 1rem;
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+.strength-badge.strong {
+  background-color: #00ff00;
+  color: #777;
+}
+
+.strength-badge.medium {
+  background-color: #0000ff;
+}
+
+.strength-badge.weak {
+  background-color: #ff0000;
+}

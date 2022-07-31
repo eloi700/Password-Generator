@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+    path {
+      fill: none;
+      stroke: #ffa500;
+      stroke-width: 25px;
+    }
+    ]]></style>
+  </defs>
+<path d ="M 200 175 A 50 50 0 1 1 175 125 A 50 50 0 1 1 225 125 L 225 125 A 50 50 0 1 1 200 175 L 200 375 L 300 375 L 200 375 L 200 350 L 200 375 L 200 375 L 200 350 L 275 350 L 200 350 L 200 325 L 300 325 L 200 325 L 200 275 L 275 275 "/>
+</svg>
